@@ -54,3 +54,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #otras gemas
 gem 'devise', '~> 4.7'
+gem 'devise-bootstrap-views', '~> 1.1'
+gem 'bootstrap-sass-rails', '~> 3.1'
+gem 'devise-bootstrapped', '~> 0.1.1'
+gem 'devise-i18n-views', '~> 0.3.7'
