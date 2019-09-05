@@ -15,14 +15,15 @@
       <h3 class="muted"><%= link_to "MOTORBOX", root_path %></h3>
     </div>
     <hr />
+    <% if notice %>
+      <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
   </div>
-  <% if notice %>
-    <p class="alert alert-success"><%= notice %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= alert %></p>
-  <% end %>
     <%= yield %>
+    <%= render 'layouts/lateral' %>
 
   </body>
 </html>

@@ -1,0 +1,57 @@
+<!-- para mostrar errores -->
+<div class="container">
+<div class="enter">
+
+<div class="boton_redirect">&larr;
+  <%= link_to 'Volver a Lista de clientes', cliente_index_path%>
+</div><br>
+<ul  >
+<%
+@cliente.errors.full_messages.each do |m|
+%>
+<li> <%= m %></li>
+<% end %>
+</ul>
+
+
+<!-- formulario -->
+
+  	<p >
+<%= f.label :Nombres %> </br>
+<%= f.text_field :nombre, class: "form-control" %>
+	</p>
+  <p >
+<%= f.label :Apellidos %> </br>
+<%= f.text_field :apellido, class: "form-control" %>
+</p>
+  <p>
+<%= f.label :Dirección%> </br>
+<%= f.text_field :direccion, class: "form-control" %>
+</p>
+
+	<p>
+<%= f.label :Teléfono %> </br>
+<%= f.text_field :telefono , class: "form-control"%>
+
+<p>
+<%= f.label :Email%> </br>
+<%= f.text_field :email, class: "form-control" %>
+</p>
+<p>
+<%= f.label :Documento%> </br>
+<%= f.text_field :documento, class: "form-control" %>
+</p>
+<p>
+<%= f.label :"RUC"%> </br>
+<%= f.text_field :documento, size: "13"%>
+</p>
+
+
+
+
+  <p>
+  <%= f.submit "Guardar" , class: 'btn btn-primary mb-2 form-control' %>
+  </p>
+</div>
+
+</div>

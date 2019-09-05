@@ -1,0 +1,54 @@
+<!-- para mostrar errores -->
+<div class="container">
+<div class="enter">
+
+<div class="boton_redirect">&larr;
+  <%= link_to 'Volver a Lista de clientes', vehiculo_index_path%>
+</div><br>
+<ul  >
+<%
+@vehiculo.errors.full_messages.each do |m|
+%>
+<li> <%= m %></li>
+<% end %>
+</ul>
+
+
+<!-- formulario -->
+
+  	<p >
+<%= f.label :Descripción %> </br>
+<%= f.text_field :descripcion, class: "form-control" %>
+	</p>
+  <p>
+<%= f.label :modelo%> </br>
+<%= f.text_field :modelo, class: "form-control" %>
+</p>
+
+	<p>
+<%= f.label :color %> </br>
+<%= f.text_field :color , class: "form-control"%>
+
+<p>
+<%= f.label :matricula%> </br>
+<%= f.text_field :matricula, class: "form-control" %>
+</p>
+<p>
+<%= f.label :marca%> </br>
+<%= f.text_field :marca, class: "form-control" %>
+</p>
+<p>
+<%= f.label :km%> </br>
+<%= f.text_field :km, class: "form-control" %>
+</p>
+<p>
+<%= f.label :chasis%> </br>
+<%= f.text_field :chasis, class: "form-control" %>
+</p>
+<p>
+  <p>
+  <%= f.submit "Guardar" , class: 'btn btn-primary mb-2 form-control' %>
+  </p>
+</div>
+
+</div>

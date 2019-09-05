@@ -1,0 +1,8 @@
+
+<div class="container-div" >
+	<h1 align="center" >Nuevo Vehiculo</h1>
+	<br><br>
+	<%= form_for @vehiculo, :url => { :action => :create, :validate => true } do |f| %>
+	<%= render "form", f: f %>
+	<% end %>
+</div>
