@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  #repuesto_servicio routes
+  get 'repuesto_servicio/index'
+  get 'repuesto_servicio/new'
+  post 'repuesto_servicio/create'
+  get 'repuesto_servicio/:id/show', to: 'repuesto_servicio#show', as: 'repuesto_servicio_show'
+  get 'repuesto_servicio/:id/edit', to: 'repuesto_servicio#edit', as: 'repuesto_servicio_edit'
+  patch 'repuesto_servicio/:id/update', to: 'repuesto_servicio#update', as: 'repuesto_servicio_update'
+  delete 'repuesto_servicio/:id/destroy', to: 'repuesto_servicio#destroy', as: 'repuesto_servicio_destroy'
+
   resources :tipo_facturas
   #vehiculo routes
   get 'vehiculo/index'

@@ -1,0 +1,57 @@
+<div class="container-fluid">
+<h1 align="center">Repuestos o Servicios</h1>
+
+<div class="boton_redirect">
+	<%= link_to 'Ir a la Lista', repuesto_servicio_index_path%> &rarr;
+</div><br>
+<div class="boton_redirect">
+	<%= link_to 'Nuevo Repuesto o servicios', repuesto_servicio_new_path%> &rarr;
+</div><br>
+<div class="input-group">
+  <span class="input-group-addon">Buscar</span>
+  <input id="filtrar" type="text" class="form-control" placeholder="Ingresa la canción de este Disco que deseas Buscar...">
+</div>
+<%=form_tag repuesto_servicio_index_path, method: :get, remote: true, id:"search-form", :style => 'padding-left:4em;font-family:bold;' do %>
+	<%= label_tag "Filtrar"%>
+	<%= text_field_tag :search, params[:keyword] %>
+	<%= submit_tag "Buscar", class:"btn btn-primary" %>
+<%end%>
+<table class="table table-hover">
+	  <thead class="thead-dark">
+	<tr><TH>ID</TH>
+		<TH>Codigo</TH>
+		<TH>Descripcion</TH>
+		<TH>Stock</TH>
+		<TH>Costo</TH>
+    <TH>Precio Venta</TH>
+    <TH>Categoria</TH>
+
+
+		<TH colspan="2"><%= link_to 'Nuevo', repuesto_servicio_new_path , class: "btn btn-link"%></TH></tr>
+</thead>
+	<tbody class="buscar">
+
+	<% @repuesto_servicios.each do |f| %>
+
+	<tr><TD><%= f.id %></TD>
+		<TD><%= f.codigo %></TD>
+		<TD><%= f.descripcion %></TD>
+		<TD><%= f.stock %></TD>
+		<TD><%= f.costo %></TD>
+    <TD><%= f.precio_venta %></TD>
+    <TD><%= f.categoria %></TD>
+
+		<TD><%= link_to 'Editar', repuesto_servicio_edit_path(f['id']) , class: "btn btn-link"%></TD><TD>
+<%= link_to 'Borrar', { :action => :destroy, :id => f.id }, :method => :delete, :data => { :confirm => 'Desea borrar el registro?' } , class: "btn btn-danger"%>
+		</TD>
+	</tr>
+    <% end %>
+    </tbody>
+
+</table>
+<footer>
+<div class="boton_redirect">
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+</div><br>
+</footer>
+</div>
