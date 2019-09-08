@@ -6,6 +6,13 @@ end
 
 def new
   @vehiculo=Vehiculo.new
+  @vehiculo.cliente_id=params[:cliente]
+
+    if params[:cliente]!=nil
+      cliente_id=params[:cliente]
+      @cliente=Cliente.find(cliente_id)
+      @cliente_id=@vehiculo.cliente_id
+    end
 end
 
 def create

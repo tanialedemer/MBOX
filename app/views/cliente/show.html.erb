@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="enter">
+
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong> Nombres:</strong>
+  <%= @cliente.nombre %>
+</p>
+<p>
+  <strong> Apellidos:</strong>
+  <%= @cliente.apellido %>
+</p>
+<p>
+  <strong> Dirección:</strong>
+  <%= @cliente.direccion %>
+</p>
+<p>
+  <strong> Telefono:</strong>
+  <%= @cliente.telefono %>
+</p>
+<p>
+  <strong> Email:</strong>
+  <%= @cliente.email %>
+</p>
+<p>
+  <strong> Documento:</strong>
+  <%= @cliente.documento %>
+</p>
+<p>
+  <strong> Ruc:</strong>
+  <%= @cliente.ruc %>
+</p>
+
+<TD><%= link_to 'Cargar Vehiculo del cliente', vehiculo_new_add_path(@cliente.id) , class: "btn btn-link"%></TD>
+
+
+<div class="boton_redirect">&larr;
+	<%= link_to 'Volver a la lista', cliente_index_path %>|
+<%= link_to 'Editar', cliente_edit_path(@cliente.id) %>&rarr;
+</div>
+</div>
+</div>

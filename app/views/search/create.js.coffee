@@ -1,1 +1,1 @@
-$("#resultados").append("<%= j render @proveedores %>")
+$("#resultados").html("<%= j render @proveedores %>")

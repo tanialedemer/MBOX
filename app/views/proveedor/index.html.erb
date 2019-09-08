@@ -7,10 +7,13 @@
 <div class="boton_redirect">
 	<%= link_to 'Nuevo Proveedor', proveedor_new_path%> &rarr;
 </div><br>
-
-<%=form_tag proveedor_index_path, :method => 'get', :style => 'padding-left:4em;font-family:bold;' do %>
+<div class="input-group">
+  <span class="input-group-addon">Buscar</span>
+  <input id="filtrar" type="text" class="form-control" placeholder="Ingresa la canción de este Disco que deseas Buscar...">
+</div>
+<%=form_tag proveedor_index_path, method: :get, remote: true, id:"search-form", :style => 'padding-left:4em;font-family:bold;' do %>
 	<%= label_tag "Filtrar"%>
-	<%= text_field_tag :search, params[:search] %>
+	<%= text_field_tag :search, params[:keyword] %>
 	<%= submit_tag "Buscar", class:"btn btn-primary" %>
 <%end%>
 <table class="table table-hover">
@@ -24,7 +27,8 @@
 
 		<TH colspan="2"><%= link_to 'Nuevo', proveedor_new_path , class: "btn btn-link"%></TH></tr>
 </thead>
-	<tbody>
+	<tbody class="buscar">
+
 	<% @proveedores.each do |f| %>
 
 	<tr><TD><%= f.id %></TD>
@@ -43,4 +47,9 @@
     </tbody>
 
 </table>
+<footer>
+<div class="boton_redirect">
+<%== pagy_nav(@pagy) if @pagy.pages > 1 %>
+</div><br>
+</footer>
 </div>

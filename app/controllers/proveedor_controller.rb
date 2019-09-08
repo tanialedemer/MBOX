@@ -1,7 +1,9 @@
 class ProveedorController < ApplicationController
   def index
   # @proveedores=Proveedor.where(["nombre LIKE ? OR ruc LIKE ?","%#{params[:search]}%", "%#{params[:search]}%"])
-  @proveedores=Proveedor.all
+  # @proveedores=Proveedor.all
+  @pagy, @proveedores= pagy(Proveedor.where(["nombre LIKE ? OR documento LIKE ?","%#{params[:search]}%", "%#{params[:search]}%"]), page: params[:page], items: 5)
+
 end
 
 def new

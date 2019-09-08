@@ -18,12 +18,15 @@ def create
   @cliente.documento=params[:cliente][:documento]
   @cliente.ruc=params[:cliente][:ruc]
   if @cliente.save
-    redirect_to cliente_index_path
+    redirect_to cliente_show_path(@cliente['id'])
   else
     render 'new'
   end
 end
-
+def show
+  id=params[:id]
+  @cliente=Cliente.find(id)
+end
 def edit
   id=params[:id]
   @cliente=Cliente.find(id)
