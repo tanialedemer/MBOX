@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'vehiculo_suggestion/index'
   #repuesto_servicio routes
   get 'repuesto_servicio/index'
   get 'repuesto_servicio/new'
@@ -17,6 +18,8 @@ Rails.application.routes.draw do
   get 'vehiculo/:id/edit', to: 'vehiculo#edit', as: 'vehiculo_edit'
   patch 'vehiculo/:id/update', to: 'vehiculo#update', as: 'vehiculo_update'
   delete 'vehiculo/:id/destroy', to: 'vehiculo#destroy', as: 'vehiculo_destroy'
+
+  get '/vehiculo_suggestion', to: 'vehiculo_suggestion#index'
   #cliente routes
   get 'cliente/index'
   get 'cliente/new'

@@ -35,11 +35,11 @@
 </p>
 <p>
 <%= f.label :categoria%> </br>
-<%= f.check_box :categoria, {:class => "anyclass", :style => "anystyle"}, "Repuesto" %> 
+<%= f.check_box :categoria, {:class => "anyclass", :style => "anystyle"}, "Repuesto" %>
 <%= f.check_box :categoria, {:class => "anyclass", :style => "anystyle"}, "Servicio" %>
 
 </p>
-
+<%= radio_button_tag(:categoria, "child") %>
   <p>
   <%= f.submit "Guardar" , class: 'btn btn-primary mb-2 form-control' %>
   </p>

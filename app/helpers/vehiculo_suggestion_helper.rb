@@ -1,0 +1,2 @@
+module VehiculoSuggestionHelper
+end

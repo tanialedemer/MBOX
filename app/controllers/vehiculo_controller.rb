@@ -1,7 +1,14 @@
 class VehiculoController < ApplicationController
+
+   PAGE_SIZE = 10
   def index
   # @proveedores=Proveedor.where(["nombre LIKE ? OR ruc LIKE ?","%#{params[:search]}%", "%#{params[:search]}%"])
-  @vehiculos=Vehiculo.all
+  # @vehiculos=Vehiculo.all
+  @page = (params[:page] || 0).to_i
+  @keywords = params[:keywords]
+
+  search = Search.new(@page, PAGE_SIZE, @keywords)
+  @vehiculos, @number_of_pages = search.vehiculos_by_matricula
 end
 
 def new
@@ -46,7 +53,7 @@ def update
   @vehiculo.km=params[:vehiculo][:km]
   @vehiculo.chasis=params[:vehiculo][:chasis]
   if @cliente.save
-    redirect_to cvehiculo_index_path
+    redirect_to vehiculo_index_path
   else
     render 'new'
   end

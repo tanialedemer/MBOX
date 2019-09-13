@@ -1,65 +1,32 @@
-<!-- para mostrar errores -->
-<div class="container">
-<div class="enter">
+<div class="container-fluid">
+ <div class="row">
+  <div class="panel-body">
+   <%= form_for :vehiculo, :url => { :action => :create, :validate => true } do |f| %>
+    <% if vehiculo.errors.any? %>
+     <div id="error_explanation">
+      <h2><%= pluralize(vehiculo.errors.count, "error") %> </h2>
 
-<div class="boton_redirect">&larr;
-  <%= link_to 'Volver a Lista de clientes', vehiculo_index_path%>
-</div><br>
-<ul  >
-<%
-@vehiculo.errors.full_messages.each do |m|
-%>
-<li> <%= m %></li>
-<% end %>
-</ul>
+      <ul>
+       <% vehiculo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+       <% end %>
+      </ul>
+     </div>
+    <% end %>
 
+    <div class="form-group">
+     <%= f.text_field :descripcion, autofocus: true, placeholder: "Descripción", class: "form-control" %>
+     <%= f.text_field :modelo, autofocus: true, placeholder: "Model", class: "form-control" %>
+     <%= f.text_field :color, autofocus: true, placeholder: "Color", class: "form-control" %>
+     <%= f.text_field :matricula, autofocus: true, placeholder: "Matricula", class: "form-control" %>
+     <%= f.text_field :marca, autofocus: true, placeholder: "Marca", class: "form-control" %>
+     <%= f.text_field :km, autofocus: true, placeholder: "Kilometraje", class: "form-control" %>
+     <%= f.text_field :chasis, autofocus: true, placeholder: "Chasis", class: "form-control" %>
 
-<!-- formulario -->
-<div class="col-md-6 .col-md-offset-3">
-	<p>
-		<% if params[:cliente]==nil%>
-			<%= f.label "Cliente" %> </br>
-			<%= f.collection_select(:cliente_id, Cliente.all, :id , :nombre)  %>
-		<% else%>
-			<%= f.label "Cliente" %> </br>
-			<%= @cliente.apellido%>, <%= @cliente.nombre%>
-			<%= f.hidden_field :cliente_id %>
-		<% end%>
+    </div>
 
-	</p>
-  	<p >
-<%= f.label :Descripción %> </br>
-<%= f.text_field :descripcion, class: "form-control" %>
-	</p>
-  <p>
-<%= f.label :modelo%> </br>
-<%= f.text_field :modelo, class: "form-control" %>
-</p>
-
-	<p>
-<%= f.label :color %> </br>
-<%= f.text_field :color , class: "form-control"%>
-
-<p>
-<%= f.label :matricula%> </br>
-<%= f.text_field :matricula, class: "form-control" %>
-</p>
-<p>
-<%= f.label :marca%> </br>
-<%= f.text_field :marca, class: "form-control" %>
-</p>
-<p>
-<%= f.label :km%> </br>
-<%= f.text_field :km, class: "form-control" %>
-</p>
-<p>
-<%= f.label :chasis%> </br>
-<%= f.text_field :chasis, class: "form-control" %>
-</p>
-<p>
-  <p>
-  <%= f.submit "Guardar" , class: 'btn btn-primary mb-2 form-control' %>
-  </p>
-</div>
-
+    <%= f.submit "Aceptar", class: "btn btn-success" %>
+   <% end %>
+  </div>
+ </div>
 </div>

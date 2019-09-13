@@ -7,7 +7,9 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
+<body>
 
   <div class="container-narrow">
     <div class="masthead">
@@ -23,7 +25,6 @@
     <% end %>
   </div>
     <%= yield %>
-    <%= render 'layouts/lateral' %>
 
   </body>
 </html>

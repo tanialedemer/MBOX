@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 2019_09_08_131729) do
     t.string "descripcion"
     t.integer "stock"
     t.float "costo"
-    t.float "previo_venta"
+    t.float "precio_venta"
     t.string "categoria"
     t.string "codigo"
     t.datetime "created_at", precision: 6, null: false

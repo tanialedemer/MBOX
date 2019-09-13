@@ -1,0 +1,49 @@
+<table class="table">
+ <thead>
+  <tr>
+   <%= render partial: "pager", locals: { keywords: @keywords, page: @page } %>
+  </tr>
+  <tr>
+    <TH>ID</TH>
+  		<TH>Descripcion</TH>
+  		<TH>Modelo</TH>
+  		<TH>Color</TH>
+  		<TH>Matricula</TH>
+      <TH>Marca</TH>
+      <TH>KM</TH>
+      <TH>Chasis</TH>
+      <th>Fecha de Alta</th>
+      <th>Fecha de Modificación</th>
+   <th colspan="2"></th>
+  </tr>
+ </thead>
+
+ <tbody>
+  <div id="vehiculos">
+	<% @vehiculos.each do |f| %>
+    <tr>
+      <TD><%= f.id %></TD>
+    		<TD><%= f.descripcion %></TD>
+    		<TD><%= f.modelo %></TD>
+    		<TD><%= f.color %></TD>
+    		<TD><%= f.matricula %></TD>
+        <TD><%= f.marca %></TD>
+        <TD><%= f.km %></TD>
+        <TD><%= f.chasis %></TD>
+     <td><%= f.created_at.strftime("%d/%m/%Y") %></td>
+     <td><%= f.updated_at.strftime("%d/%m/%Y") %></td>
+     <td>
+      <%= button_to vehiculo_edit_path([f.id]), {method: :get, class: "btn btn-info"} do %>
+       <span class="glyphicon glyphicon-pencil" aria-hidden="true"> </span> Editar
+      <% end %>
+     </td>
+     <td>
+      <%= button_to @vehiculo, { method: :delete, data: { confirm: '¿Está seguro?' }, class: "btn btn-danger" } do %>
+       <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Eliminar
+      <% end %>
+     </td>
+    </tr>
+   <% end %>
+  </div>
+ </tbody>
+</table>
