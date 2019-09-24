@@ -38,7 +38,7 @@
       <% end %>
      </td>
      <td>
-      <%= button_to @vehiculo, { method: :delete, data: { confirm: '¿Está seguro?' }, class: "btn btn-danger" } do %>
+      <%= button_to vehiculo_destroy_path([f.id]), { method: :delete, data: { confirm: '¿Está seguro?' }, class: "btn btn-danger" } do %>
        <span class="glyphicon glyphicon-trash" aria-hidden="true"> </span> Eliminar
       <% end %>
      </td>

@@ -1,9 +1,9 @@
 <!-- para mostrar errores -->
+<div class="border-form-div">
 <div class="container">
 <div class="enter">
-
 <div class="boton_redirect">&larr;
-  <%= link_to 'Volver a Lista de clientes', proveedor_index_path%>
+  <%= link_to 'Volver a Lista de Proveedores', proveedor_index_path%>
 </div><br>
 <ul  >
 <%
@@ -15,10 +15,17 @@
 
 
 <!-- formulario -->
+<p>
+<%= f.label :"RUC"%> </br>
+<%= f.text_field :documento, size: "13", :class => "text_field", :required => true%>
+<%= f.label :" - " %>
+<%= f.text_field :ruc, size: "1", :class => 'text_field', class: "ruc" %>
+</p>
+
 
   	<p >
 <%= f.label :Nombres %> </br>
-<%= f.text_field :nombre, class: "form-control" %>
+<%= f.text_field :nombre, class: "form-control" , :required => true%>
 	</p>
   <p>
 <%= f.label :Dirección%> </br>
@@ -31,25 +38,15 @@
 
 <p>
 <%= f.label :Email%> </br>
-<%= f.text_field :email, class: "form-control", type: "email" %>
+<%= f.text_field :email, class: "form-control" %>
 </p>
-<p>
-<%= f.label :Documento%> </br>
-<%= f.text_field :documento, class: "form-control" %>
-</p>
-<p>
-<%= f.label :"RUC"%> </br>
-<%= f.text_field :documento, size: "13"%>
-<%= f.label :" - " %>
-<%= f.number_field :ruc, size: "1" %>
-</p>
-
-
-
 
   <p>
-  <%= f.submit "Guardar" , class: 'btn btn-primary mb-2 form-control' %>
+  <%= f.submit "Guardar" , class: 'btn btn-primary form-control' %>
   </p>
 </div>
 
 </div>
+</div>
+
+</div></div>

@@ -1,7 +1,8 @@
-<div class="container-fluid">
- <div class="row">
-  <div class="panel-body">
+<div class="border-form-div">
+<div class="container">
+<div class="enter">
    <%= form_for :vehiculo, :url => { :action => :create, :validate => true } do |f| %>
+
     <% if vehiculo.errors.any? %>
      <div id="error_explanation">
       <h2><%= pluralize(vehiculo.errors.count, "error") %> </h2>
@@ -27,6 +28,8 @@
 
     <%= f.submit "Aceptar", class: "btn btn-success" %>
    <% end %>
+    
   </div>
  </div>
 </div>
+

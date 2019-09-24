@@ -41,6 +41,7 @@ def update
   @cliente.email=params[:cliente][:email]
   @cliente.documento=params[:cliente][:documento]
   @cliente.ruc=params[:cliente][:ruc]
+  
   if @cliente.save
     redirect_to cliente_index_path
   else

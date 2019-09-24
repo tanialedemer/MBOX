@@ -19,7 +19,7 @@
  */
  /* User sign in and sign forms. */
  .border-form-div {
-   max-width: 300px;
+   max-width: 800px;
    padding: 19px 29px 29px;
    margin: 0 auto 20px;
    background-color: #fff;
@@ -43,6 +43,14 @@
    margin-bottom: 15px;
    padding: 7px 9px;
  }
+ html {
+  height: 100%;
+}
  body{
-   margin-left: 80px;
+  height: 100%;
  }
+.btn-h{
+  width: 60%;
+  background: #19a698;
+  color: black;
+}

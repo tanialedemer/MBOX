@@ -1,9 +1,19 @@
+<div class="container">
+<div class="panel panel-default">
+  <div class="panel-heading">Tipo de Factura</div>
+  <div class="panel-body">
 <p id="notice"><%= notice %></p>
 
+<div class="container-fluid">
 <p>
   <strong>Descripcion:</strong>
   <%= @tipo_factura.descripcion %>
 </p>
 
-<%= link_to 'Edit', edit_tipo_factura_path(@tipo_factura) %> |
-<%= link_to 'Back', tipo_facturas_path %>
+<%= link_to 'Editar', edit_tipo_factura_path(@tipo_factura) %> |
+<%= link_to 'Volver', tipo_facturas_path %>
+</div>
+</div>
+</div>
+</div>
+</div>

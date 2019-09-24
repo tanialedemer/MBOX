@@ -52,7 +52,8 @@ def update
   @vehiculo.marca=params[:vehiculo][:marca]
   @vehiculo.km=params[:vehiculo][:km]
   @vehiculo.chasis=params[:vehiculo][:chasis]
-  if @cliente.save
+  
+  if @vehiculo.save
     redirect_to vehiculo_index_path
   else
     render 'new'

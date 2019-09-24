@@ -1,9 +1,18 @@
+<div class="container">
+<div class="panel panel-default">
+  <div class="panel-heading">Clientes</div>
+  <div class="panel-body">
+
+
 <div class="container-fluid">
   <div class="enter">
 
 
 <p id="notice"><%= notice %></p>
-
+<p>
+  <strong> Ruc:</strong>
+  <%= @cliente.ruc %>
+</p>
 <p>
   <strong> Nombres:</strong>
   <%= @cliente.nombre %>
@@ -28,10 +37,7 @@
   <strong> Documento:</strong>
   <%= @cliente.documento %>
 </p>
-<p>
-  <strong> Ruc:</strong>
-  <%= @cliente.ruc %>
-</p>
+
 
 <TD><%= link_to 'Cargar Vehiculo del cliente', vehiculo_new_add_path(@cliente.id) , class: "btn btn-link"%></TD>
 
@@ -40,5 +46,11 @@
 	<%= link_to 'Volver a la lista', cliente_index_path %>|
 <%= link_to 'Editar', cliente_edit_path(@cliente.id) %>&rarr;
 </div>
+
 </div>
 </div>
+</div>
+</div>
+</div>
+</div>
+

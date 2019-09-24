@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2019_09_08_131729) do
     t.text "direccion"
     t.string "telefono"
     t.string "email"
-    t.string "documento"
+    t.string "documento", unique: true
     t.integer "ruc"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

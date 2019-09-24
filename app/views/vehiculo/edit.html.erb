@@ -1,10 +1,10 @@
 <div class="container-fluid">
- <div class="row">
-  <h1>Editar Vehiculo</h1>
+
+  <h1 align="center">Editar Vehiculo</h1>
+   <%= form_for :vehiculo, :url => { :action => :create, method: :patch} do |f| %>
 
   <%= render 'form', vehiculo: @vehiculo %>
 
-  <%= link_to 'Volver', vehiculo_index_path %>
+   <% end %>
 
- </div>
 </div>

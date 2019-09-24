@@ -1,3 +1,11 @@
+
+<div class="container">
+<div class="panel panel-default">
+  <div class="panel-heading">Tipo de Factura</div>
+  <div class="panel-body">
+
+<div class="container-fluid">
+
 <%= form_with(model: tipo_factura, local: true) do |form| %>
   <% if tipo_factura.errors.any? %>
     <div id="error_explanation">
@@ -12,11 +20,16 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :descripcion %>
-    <%= form.text_field :descripcion %>
+    <%= form.label :descripcion %><br>
+    <%= form.text_field :descripcion , class: "form-control"%><br>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit "Editar", class: 'btn btn-primary form-control'%>
   </div>
 <% end %>
+  </div>
+  </div>
+  </div>
+  </div>
+  </div>
