@@ -1,0 +1,21 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  fecha: 2019-09-24
+  total_iva: 1.5
+  total: 1.5
+  saldo: 1.5
+  proveedor_id: 1
+  tipo_factura_id: 1
+  num_fact: 1
+  estado: MyString
+
+two:
+  fecha: 2019-09-24
+  total_iva: 1.5
+  total: 1.5
+  saldo: 1.5
+  proveedor_id: 1
+  tipo_factura_id: 1
+  num_fact: 1
+  estado: MyString

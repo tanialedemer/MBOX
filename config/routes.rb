@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
-  get 'vehiculo_suggestion/index'
+  #routes compra
+  get 'compra/index'
+  get 'compra/new'
+  post 'compra/create'
+  get 'compra/:id/show', to: 'compra#show', as: 'compra_show'
+  get 'compra/:id/edit', to: 'compra#edit', as: 'compra_edit'
+  patch 'compra/:id/update', to: 'compra#update', as: 'compra_update'
+  delete 'compra/:id/destroy', to: 'compra#destroy', as: 'compra_destroy'
   #repuesto_servicio routes
   get 'repuesto_servicio/index'
   get 'repuesto_servicio/new'

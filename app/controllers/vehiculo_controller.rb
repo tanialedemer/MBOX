@@ -45,6 +45,7 @@ end
 
 def update
   id=params[:id]
+  @vehiculo=Vehiculo.find(id)
   @vehiculo.descripcion=params[:vehiculo][:descripcion]
   @vehiculo.modelo=params[:vehiculo][:modelo]
   @vehiculo.color=params[:vehiculo][:color]

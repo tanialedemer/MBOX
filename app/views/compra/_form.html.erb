@@ -1,0 +1,65 @@
+<!-- para mostrar errores -->
+<div class="border-form-div">
+<div class="container">
+<div class="enter">
+
+<div class="boton_redirect">&larr;
+  <%= link_to 'Volver a Lista de Compras', compra_index_path%>
+</div><br>
+<ul  >
+<%
+@compra.errors.full_messages.each do |m|
+%>
+<li> <%= m %></li>
+<% end %>
+</ul>
+
+
+<!-- formulario -->
+<p>
+<%= f.label :"Fecha"%> </br>
+<%= f.date_field :fecha, :class => "text_field", :required => true%>
+</p>
+
+ <p >
+<%= f.label :"Número de Factura" %> </br>
+<%= f.text_field :num_fact, class: "form-control" %>
+</p>
+
+ <p >
+<%= f.label :"Tipo de Factura" %> </br>
+<%= f.collection_select( :tipo_factura_id, TipoFactura.all, :id, :descripcion, class: "form-control") %>
+
+</p>
+ <p >
+<%= f.label :Proveedor %> </br>
+<%= f.collection_select( :proveedor_id, Proveedor.all, :id, :nombre, class: "form-control") %>
+
+</p>
+
+<p>
+<%= f.label :"Total IVA"%> </br>
+<%= f.text_field :total_iva, class: "form-control" %>
+</p>
+
+	<p>
+<%= f.label :Total %> </br>
+<%= f.text_field :total , class: "form-control"%>
+
+<p>
+<%= f.label :Saldo%> </br>
+<%= f.text_field :saldo, class: "form-control" %>
+</p>
+<p>
+<%= f.label :Estado%> </br>
+<%= f.text_field :estado, class: "form-control" %>
+</p> 
+
+  <p>
+  <%= f.submit "Guardar" , class: 'btn btn-primary mb-2 form-control' %>
+  </p>
+</div>
+
+</div>
+</div>
+
