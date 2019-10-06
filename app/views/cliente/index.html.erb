@@ -28,7 +28,7 @@
     <TH>Documento</TH>
     <TH colspan="3">RUC</TH>
 
-		<TH colspan="2"><%#= link_to 'Nuevo', cliente_new_path , class: "btn btn-link"%></TH></tr>
+		<TH colspan="3"><%#= link_to 'Nuevo', cliente_new_path , class: "btn btn-link"%></TH></tr>
 </thead>
 	<tbody>
 	<% @clientes.each do |f| %>
@@ -44,6 +44,11 @@
 		<TD><%= f.ruc %></TD>
 
 
+    <TD>
+    <%= button_to cliente_show_path([f.id]), {method: :get, class: "btn btn-info"} do %>
+        <span class="glyphicon glyphicon-list-alt" aria-hidden="true"> </span> Detalles
+        <% end %>
+    </TD>
 
 	<TD>
 		<%= button_to cliente_edit_path([f.id]), {method: :get, class: "btn btn-info"} do %>

@@ -1,0 +1,39 @@
+<%= wicked_pdf_stylesheet_link_tag 'pdf' %>
+<div class="container">
+<div class="panel panel-default">
+	<h1 align="center">Proveedores</h1><br>
+  <div class="panel-heading"></div>
+  <div class="panel-body">
+
+<div class="container-fluid">
+<table class="table">
+	  <thead class="thead-dark">
+		<tr><TH>ID</TH>
+		<TH>Nombres</TH>
+		<TH>Apellidos</TH>
+		<TH>Dirección</TH>
+		<TH>Teléfono</TH>
+		<TH colspan="3">Doc-RUC</TH>
+	  </thead>
+	<tbody class="buscar">
+
+	<% @proveedores.each do |f| %>
+
+	<tr><TD><%= f.id %></TD>
+		<TD><%= f.nombre %></TD>
+		<TD><%= f.ruc %></TD>
+		<TD><%= f.direccion %></TD>
+		<TD><%= f.telefono %></TD>
+		<TD colspan="3"><%= f.documento %>-<%= f.ruc%></TD>
+
+	</tr>
+    <% end %>
+    </tbody>
+
+</table>
+
+</div>
+</div>
+</div>
+</div>
+</div>

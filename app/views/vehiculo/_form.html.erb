@@ -3,32 +3,46 @@
 <div class="enter">
    <%= form_for :vehiculo, :url => { :action => :create, :validate => true } do |f| %>
 
-    <% if vehiculo.errors.any? %>
-     <div id="error_explanation">
-      <h2><%= pluralize(vehiculo.errors.count, "error") %> </h2>
-
-      <ul>
-       <% vehiculo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-       <% end %>
-      </ul>
-     </div>
-    <% end %>
+  <div class="boton_redirect">&larr;
+  <%= link_to 'Volver a Lista de Vehiculos', vehiculo_index_path%>
+</div><br>
 
     <div class="form-group">
-     <%= f.text_field :descripcion, autofocus: true, placeholder: "Descripción", class: "form-control" %>
-     <%= f.text_field :modelo, autofocus: true, placeholder: "Model", class: "form-control" %>
-     <%= f.text_field :color, autofocus: true, placeholder: "Color", class: "form-control" %>
+      <p>
+          <%= label_tag "Cliente" %> <br>
+          <%= f.
+          collection_select( :cliente_id, Cliente.all, :id, :nombre, class: "form-control", id: "user-select", :prompt => "Seleccione Cliente" ) %>
+      </p>
+      <p>
      <%= f.text_field :matricula, autofocus: true, placeholder: "Matricula", class: "form-control" %>
-     <%= f.text_field :marca, autofocus: true, placeholder: "Marca", class: "form-control" %>
-     <%= f.text_field :km, autofocus: true, placeholder: "Kilometraje", class: "form-control" %>
+      </p>
+      <p>
      <%= f.text_field :chasis, autofocus: true, placeholder: "Chasis", class: "form-control" %>
+      </p>
+      <p>
+     <%= f.text_field :marca, autofocus: true, placeholder: "Marca", class: "form-control" %>
+      </p>
+      <p>
+         <%= f.text_field :modelo, autofocus: true, placeholder: "Modelo", class: "form-control" %>
+      </p>
+      <p>
+         <%= f.text_field :tipo, autofocus: true, placeholder: "Tipo", class: "form-control" %>
+      </p>
+      <p>
+     <%= f.text_field :color, autofocus: true, placeholder: "Color", class: "form-control" %>
+      </p>
+      <p>
+         <%= f.text_field :año, autofocus: true, placeholder: "Año Fab.", class: "form-control" %>
+      </p>
+      <p>
+     <%= f.text_field :km, autofocus: true, placeholder: "Kilometraje", class: "form-control" %>
+      </p>
+      
 
     </div>
 
-    <%= f.submit "Aceptar", class: "btn btn-success" %>
-   <% end %>
-    
+    <%= f.submit "Guardar", class: "btn btn-success form-control" %>
+   <% end %>  
   </div>
  </div>
 </div>

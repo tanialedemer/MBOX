@@ -1,5 +1,15 @@
 Rails.application.routes.draw do
+  resources :funcions
+  #detalle compra routes
+  get 'detalle_compra/index'
+  get 'detalle_compra/new'
+  get 'detalle_compra/:id/edit', to: 'detalle_compra#edit', as: 'detalle_compra_edit'
+  patch 'detalle_compra/:id/update', to: 'detalle_compra#update', as: 'detalle_compra_update'
+  delete 'detalle_compra/:id/destroy', to: 'detalle_compra#destroy', as: 'detalle_compra_destroy'
+  get 'detalle_compra/:compra/new', to: 'detalle_compra#new', as: 'compra_detalle_compra_new'
+
   #routes compra
+  get 'compra/:detalle_compra/new', to: 'compra#new', as: 'compra_detalle_new'
   get 'compra/index'
   get 'compra/new'
   post 'compra/create'
@@ -42,6 +52,7 @@ Rails.application.routes.draw do
   get 'proveedor/:id/edit', to: 'proveedor#edit', as: 'proveedor_edit'
   patch 'proveedor/:id/update', to: 'proveedor#update', as: 'proveedor_update'
   delete 'proveedor/:id/destroy', to: 'proveedor#destroy', as: 'proveedor_destroy'
+  get 'proveedor/reporte', to: 'proveedor#reporte', as: 'proveedor_reporte'
   #search routes
   get "search/create"
   devise_for :users

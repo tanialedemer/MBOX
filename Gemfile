@@ -63,4 +63,12 @@ gem 'pagy'
 gem 'rdoc', '~> 6.2'
 gem 'selectize-rails', '~> 0.12.6'
 gem 'annotate'
-gem 'sass', '~> 3.7', '>= 3.7.4'
+
+
+#pdf
+gem 'wicked_pdf', '~> 1.4'
+gem 'wkhtmltopdf-binary', '~> 0.12.4'
+
+#validates
+gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
+gem 'client_side_validations', '~> 16.0', '>= 16.0.2'

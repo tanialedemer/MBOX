@@ -32,7 +32,7 @@ end
 
 def update
   id=params[:id]
-  @proveedor=RepuestoServicio.find(id)
+  @repuesto_servicio=RepuestoServicio.find(id)
   @repuesto_servicio.codigo=params[:repuesto_servicio][:codigo]
   @repuesto_servicio.descripcion=params[:repuesto_servicio][:descripcion]
   @repuesto_servicio.stock=params[:repuesto_servicio][:stock]
@@ -42,7 +42,7 @@ def update
   if @repuesto_servicio.save
     redirect_to repuesto_servicio_index_path
   else
-    render 'new'
+    render 'edit'
   end
 end
 

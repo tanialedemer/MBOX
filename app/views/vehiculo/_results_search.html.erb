@@ -4,8 +4,9 @@
    <%= render partial: "pager", locals: { keywords: @keywords, page: @page } %>
   </tr>
   <tr>
-    <TH>ID</TH>
-  		<TH>Descripcion</TH>
+      <TH>ID</TH>
+      <TH>Cliente</TH>
+  		<TH>Tipo</TH>
   		<TH>Modelo</TH>
   		<TH>Color</TH>
   		<TH>Matricula</TH>
@@ -22,8 +23,9 @@
   <div id="vehiculos">
 	<% @vehiculos.each do |f| %>
     <tr>
-      <TD><%= f.id %></TD>
-    		<TD><%= f.descripcion %></TD>
+        <TD><%= f.id %></TD>
+        <TD><%= f.cliente_id %></TD>
+      	<TD><%= f.tipo %></TD>
     		<TD><%= f.modelo %></TD>
     		<TD><%= f.color %></TD>
     		<TD><%= f.matricula %></TD>

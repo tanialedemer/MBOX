@@ -5,48 +5,30 @@
 <div class="boton_redirect">&larr;
   <%= link_to 'Volver a Lista de Proveedores', proveedor_index_path%>
 </div><br>
-<ul  >
-<%
-@proveedor.errors.full_messages.each do |m|
-%>
-<li> <%= m %></li>
-<% end %>
-</ul>
-
 
 <!-- formulario -->
-<p>
-<%= f.label :"RUC"%> </br>
-<%= f.text_field :documento, size: "13", :class => "text_field", :required => true%>
-<%= f.label :" - " %>
-<%= f.text_field :ruc, size: "1", :class => 'text_field', class: "ruc" %>
-</p>
-
-
-  	<p >
-<%= f.label :Nombres %> </br>
-<%= f.text_field :nombre, class: "form-control" , :required => true%>
-	</p>
-  <p>
-<%= f.label :Dirección%> </br>
-<%= f.text_field :direccion, class: "form-control" %>
-</p>
-
+    <div class="form-group">
 	<p>
-<%= f.label :Teléfono %> </br>
-<%= f.text_field :telefono , class: "form-control"%>
-
-<p>
-<%= f.label :Email%> </br>
-<%= f.text_field :email, class: "form-control" %>
-</p>
-
-  <p>
-  <%= f.submit "Guardar" , class: 'btn btn-primary form-control' %>
-  </p>
+		<%= f.text_field :documento, size: "13", :class => "text_field", placeholder: "RUC"%>
+		<%= f.label :" - " %>
+		<%= f.text_field :ruc, size: "1", :class => 'text_field', class: "ruc" %>
+	</p>
+  	<p >
+		<%= f.text_field :nombre, class: "form-control" , placeholder: "Nombres"%>
+	</p>
+  	<p>
+		<%= f.text_field :direccion, class: "form-control",  placeholder: "Dirección" %>
+	</p>
+	<p>
+		<%= f.text_field :telefono , class: "form-control", placeholder: "Teléfono"%>
+	</p>
+	<p>
+		<%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+	</p>
+  	<p>
+  		<%= f.submit "Guardar" , class: 'btn btn-primary form-control' %>
+  	</p>
 </div>
-
 </div>
 </div>
-
-</div></div>
+</div>

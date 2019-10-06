@@ -24,9 +24,11 @@ end
 
 def create
   @vehiculo=Vehiculo.new
-  @vehiculo.descripcion=params[:vehiculo][:descripcion]
+  @vehiculo.descripcion=params[:vehiculo][:tipo]
+  @vehiculo.cliente_id=params[:vehiculo][:cliente_id]
   @vehiculo.modelo=params[:vehiculo][:modelo]
   @vehiculo.color=params[:vehiculo][:color]
+  @vehiculo.año=params[:vehiculo][:año]
   @vehiculo.matricula=params[:vehiculo][:matricula]
   @vehiculo.marca=params[:vehiculo][:marca]
   @vehiculo.km=params[:vehiculo][:km]
@@ -46,9 +48,11 @@ end
 def update
   id=params[:id]
   @vehiculo=Vehiculo.find(id)
-  @vehiculo.descripcion=params[:vehiculo][:descripcion]
+  @vehiculo.descripcion=params[:vehiculo][:tipo]
+  @vehiculo.cliente_id=params[:vehiculo][:cliente_id]
   @vehiculo.modelo=params[:vehiculo][:modelo]
   @vehiculo.color=params[:vehiculo][:color]
+  @vehiculo.año=params[:vehiculo][:año]
   @vehiculo.matricula=params[:vehiculo][:matricula]
   @vehiculo.marca=params[:vehiculo][:marca]
   @vehiculo.km=params[:vehiculo][:km]

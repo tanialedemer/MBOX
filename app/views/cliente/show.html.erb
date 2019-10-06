@@ -7,11 +7,13 @@
 <div class="container-fluid">
   <div class="enter">
 
+<div class="jumbotron text-justify">
 
 <p id="notice"><%= notice %></p>
+<div class="group">
 <p>
   <strong> Ruc:</strong>
-  <%= @cliente.ruc %>
+  <%= @cliente.documento %>
 </p>
 <p>
   <strong> Nombres:</strong>
@@ -33,20 +35,16 @@
   <strong> Email:</strong>
   <%= @cliente.email %>
 </p>
-<p>
-  <strong> Documento:</strong>
-  <%= @cliente.documento %>
-</p>
-
-
-<TD><%= link_to 'Cargar Vehiculo del cliente', vehiculo_new_add_path(@cliente.id) , class: "btn btn-link"%></TD>
-
-
-<div class="boton_redirect">&larr;
-	<%= link_to 'Volver a la lista', cliente_index_path %>|
-<%= link_to 'Editar', cliente_edit_path(@cliente.id) %>&rarr;
 </div>
-
+<center>
+<%= button_to vehiculo_new_add_path(@cliente.id), {method: :get, class: "btn btn-success"} do %>
+        <span class="glyphicon glyphicon-plus" aria-hidden="true"> </span> Cargar Vehiculo del cliente
+        <% end %>
+</center> 
+<div class="boton_redirect">&larr;
+  <%= link_to 'Volver a la lista', cliente_index_path %>|
+<%= link_to 'Editar', cliente_edit_path(@cliente.id) %>&rarr;
+</div>     
 </div>
 </div>
 </div>

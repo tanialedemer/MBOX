@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_24_235412) do
+ActiveRecord::Schema.define(version: 2019_10_03_001728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,21 @@ ActiveRecord::Schema.define(version: 2019_09_24_235412) do
     t.integer "tipo_factura_id"
     t.integer "num_fact"
     t.string "estado"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "detalle_compras", force: :cascade do |t|
+    t.integer "cantidad"
+    t.float "subtotal"
+    t.integer "compra_id"
+    t.integer "repuesto_servicio_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "funcions", force: :cascade do |t|
+    t.string "descripcion"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -82,7 +97,7 @@ ActiveRecord::Schema.define(version: 2019_09_24_235412) do
   end
 
   create_table "vehiculos", force: :cascade do |t|
-    t.string "descripcion"
+    t.string "tipo"
     t.string "modelo"
     t.string "color"
     t.string "matricula"

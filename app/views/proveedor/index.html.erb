@@ -1,8 +1,9 @@
 <div class="container">
+<h4>Generar Reporte</h4>
+<%=link_to('Lista de Proveedores', proveedor_reporte_path(format: :pdf)) %> <br>
 <div class="panel panel-default">
   <div class="panel-heading">Proveedores</div>
   <div class="panel-body">
-
 <div class="container-fluid">
 	
 <%=form_tag proveedor_index_path, method: :get, remote: true, id:"search-form", :style => 'padding-left:4em;font-family:bold;' do %>

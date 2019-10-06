@@ -22,11 +22,9 @@
 	<tr><TH>ID</TH>
 		<TH>Codigo</TH>
 		<TH>Descripcion</TH>
-		<TH>Stock</TH>
 		<TH>Costo</TH>
     <TH>Precio Venta</TH>
-    <TH>Categoria</TH>
-
+  
 
 		<TH colspan="2"><%#= link_to 'Nuevo', repuesto_servicio_new_path , class: "btn btn-link"%></TH></tr>
 </thead>
@@ -37,10 +35,9 @@
 	<tr><TD><%= f.id %></TD>
 		<TD><%= f.codigo %></TD>
 		<TD><%= f.descripcion %></TD>
-		<TD><%= f.stock %></TD>
 		<TD><%= f.costo %></TD>
     <TD><%= f.precio_venta %></TD>
-    <TD><%= f.categoria %></TD>
+   
 
 		<TD>
 			<%= button_to repuesto_servicio_edit_path([f.id]), {method: :get, class: "btn btn-info"} do %>

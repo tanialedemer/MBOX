@@ -5,42 +5,26 @@
 <div class="boton_redirect">&larr;
   <%= link_to 'Volver a Lista', repuesto_servicio_index_path%>
 </div><br>
-<ul  >
-<%
-@repuesto_servicio.errors.full_messages.each do |m|
-%>
-<li> <%= m %></li>
-<% end %>
-</ul>
-
-
 <!-- formulario -->
 
   	<p >
-<%= f.label :Codigo %> </br>
-<%= f.text_field :codigo, class: "form-control" %>
+		<%= f.text_field :codigo, class: "form-control", placeholder: "Código del Producto" %>
 	</p>
-  <p>
-<%= f.label :Descripción%> </br>
-<%= f.text_field :descripcion, class: "form-control" %>
-</p>
-
+  	<p>
+		<%= f.text_field :descripcion, class: "form-control" , placeholder: "Descripción"%>
+	</p>
 	<p>
-<%= f.label :Costo %> </br>
-<%= f.text_field :costo , class: "form-control"%>
+		<%= f.text_field :costo , class: "form-control", placeholder: "Costo" %>
+	<p>
+		<%= f.text_field :precio_venta, class: "form-control", placeholder: "Precio Venta" %>
+	</p>
+	<p>
+ 	<p>
+		<%= f.label :categoria%>
+		<%= f.collection_select( :categoria, Funcion.all, :id, :descripcion, class: "form-control", :value => 'Stock') %>
+	</p>
 
-<p>
-<%= f.label :Precioventa%> </br>
-<%= f.text_field :precio_venta, class: "form-control" %>
-</p>
-<p>
-<%= f.label :categoria%> </br>
-<%= f.check_box :categoria, {:class => "anyclass", :style => "anystyle"}, "Repuesto" %>
-<%= f.check_box :categoria, {:class => "anyclass", :style => "anystyle"}, "Servicio" %>
 
-</p>
-<%= radio_button_tag(:categoria, "child") %>
-  <p>
   <%= f.submit "Guardar" , class: 'btn btn-primary mb-2 form-control' %>
   </p>
 </div>

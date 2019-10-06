@@ -34,6 +34,7 @@ end
 
 def update
   id=params[:id]
+  @cliente=Cliente.find(id)
   @cliente.nombre=params[:cliente][:nombre]
   @cliente.apellido=params[:cliente][:apellido]
   @cliente.direccion=params[:cliente][:direccion]
@@ -45,7 +46,7 @@ def update
   if @cliente.save
     redirect_to cliente_index_path
   else
-    render 'new'
+    render 'edit'
   end
 end
 

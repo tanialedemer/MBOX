@@ -3,7 +3,22 @@ class ProveedorController < ApplicationController
   # @proveedores=Proveedor.where(["nombre LIKE ? OR ruc LIKE ?","%#{params[:search]}%", "%#{params[:search]}%"])
   # @proveedores=Proveedor.all
   @pagy, @proveedores= pagy(Proveedor.where(["nombre LIKE ? OR documento LIKE ?","%#{params[:search]}%", "%#{params[:search]}%"]), page: params[:page], items: 5)
+  respond_to do |format|
+    format.html
+    format.json
+    format.pdf { render template: 'proveedor/reporte', pdf: 'Reporte', layout: 'pdf.html'}
+  end
+end
 
+def reporte
+  # @proveedores=Proveedor.where(["nombre LIKE ? OR ruc LIKE ?","%#{params[:search]}%", "%#{params[:search]}%"])
+  # @proveedores=Proveedor.all
+  @pagy, @proveedores= pagy(Proveedor.where(["nombre LIKE ? OR documento LIKE ?","%#{params[:search]}%", "%#{params[:search]}%"]), page: params[:page], items: 5)
+  respond_to do |format|
+    format.html
+    format.json
+    format.pdf { render template: 'proveedor/reporte', pdf: 'Reporte', layout: 'pdf.html'}
+  end
 end
 
 def new
