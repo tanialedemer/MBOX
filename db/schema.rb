@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_03_001728) do
+ActiveRecord::Schema.define(version: 2019_10_15_212145) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -49,8 +49,30 @@ ActiveRecord::Schema.define(version: 2019_10_03_001728) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "empleados", force: :cascade do |t|
+    t.string "nombre"
+    t.string "apellido"
+    t.date "fecha_nac"
+    t.string "documento"
+    t.string "telefono"
+    t.string "especialidad"
+    t.string "direccion"
+    t.date "fecha_contratacion"
+    t.float "salario"
+    t.integer "usuario_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "funcions", force: :cascade do |t|
     t.string "descripcion"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "mecanicos", force: :cascade do |t|
+    t.string "especialidad"
+    t.integer "empleado_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -107,6 +129,7 @@ ActiveRecord::Schema.define(version: 2019_10_03_001728) do
     t.integer "cliente_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "año"
   end
 
 end

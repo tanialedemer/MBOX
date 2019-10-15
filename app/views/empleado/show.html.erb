@@ -1,0 +1,60 @@
+<div class="container">
+<div class="panel panel-default">
+  <div class="panel-heading">Empleado</div>
+  <div class="panel-body">
+
+
+<div class="container-fluid">
+  <div class="enter">
+
+<div class="jumbotron text-justify">
+
+<p id="notice"><%= notice %></p>
+<div class="group">
+<p>
+  <strong> Documento:</strong>
+  <%= @empleado.documento %>
+</p>
+<p>
+  <strong> Nombres:</strong>
+  <%= @empleado.nombre %>
+</p>
+<p>
+  <strong> Apellidos:</strong>
+  <%= @empleado.apellido %>
+</p>
+<p>
+  <strong> Dirección:</strong>
+  <%= @empleado.direccion %>
+</p>
+<p>
+  <strong> Telefono:</strong>
+  <%= @empleado.telefono %>
+</p>
+<p>
+  <strong> Fecha de Nacimiento:</strong>
+  <%= @empleado.fecha_nac %>
+</p>
+<p>
+  <strong> Especialidad:</strong>
+  <%= @empleado.especialidad %>
+</p>
+<p>
+  <strong> Fecha de Contratación:</strong>
+  <%= @empleado.fecha_contratacion %>
+</p>
+<p>
+  <strong> Salario:</strong>
+  <%= @empleado.salario %>
+</p>
+</div>
+<div class="boton_redirect">&larr;
+  <%= link_to 'Volver a la lista', empleado_index_path %>|
+<%= link_to 'Editar', cliente_edit_path(@empleado.id) %>&rarr;
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>

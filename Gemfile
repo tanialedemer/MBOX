@@ -63,7 +63,7 @@ gem 'pagy'
 gem 'rdoc', '~> 6.2'
 gem 'selectize-rails', '~> 0.12.6'
 gem 'annotate'
-
+gem 'materialize-sass', '~> 0.96.1'
 
 #pdf
 gem 'wicked_pdf', '~> 1.4'

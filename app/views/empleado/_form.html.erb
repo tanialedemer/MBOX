@@ -1,0 +1,45 @@
+<!-- para mostrar errores -->
+<div class="border-form-div">
+<div class="container">
+<div class="enter">
+<div class="boton_redirect">&larr;
+  <%= link_to 'Volver a Lista de Proveedores', empleado_index_path%>
+</div><br>
+
+<!-- formulario -->
+    <div class="form-group">
+	<p>
+		<%= f.text_field :documento, size: "13", :class => "text_field", placeholder: "Documento"%>
+	</p>
+  	<p >
+		<%= f.text_field :nombre, class: "form-control" , placeholder: "Nombres"%>
+	</p>
+  <p >
+  <%= f.text_field :apellido, class: "form-control" , placeholder: "Apellidos"%>
+  </p>
+  <p >
+  <%= f.date_field :fecha_nac, class: "form-control" , placeholder: "fecha_nac"%>
+  </p>
+  	<p>
+		<%= f.text_field :direccion, class: "form-control",  placeholder: "Dirección" %>
+	</p>
+	<p>
+		<%= f.text_field :telefono , class: "form-control", placeholder: "Teléfono"%>
+	</p>
+	<p>
+		<%= f.text_field :especialidad, class: "form-control", placeholder: "especialidad" %>
+	</p>
+  <p >
+  <%= f.text_field :fecha_contratación, class: "form-control" , placeholder: "fecha_contratación"%>
+  </p>
+  <p >
+  <%= f.text_field :salario, class: "form-control" , placeholder: "salario"%>
+  </p>
+
+  	<p>
+  		<%= f.submit "Guardar" , class: 'btn btn-primary form-control' %>
+  	</p>
+</div>
+</div>
+</div>
+</div>

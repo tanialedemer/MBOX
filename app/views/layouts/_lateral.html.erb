@@ -24,47 +24,92 @@
 
 
 	<div class="scrollbar" id="style-1">
-		<ul>
+		<!-- <ul>
 			<li>
 				<a>
 					<i class="fa fa-home fa-lg"></i>
 					<span class="nav-text">Compras</span><br>
 							<li>
-	  <span class="nav-text"><%= link_to "Proveedor" , proveedor_index_path %></span>
+	  <span class="nav-text"><%#= link_to "Proveedor" , proveedor_index_path %></span>
 	</li>
 	<li>
-	  <span class="nav-text"><%= link_to "Repuesto o Servicio" , repuesto_servicio_index_path %></span>
+	  <span class="nav-text"><%#= link_to "Repuesto o Servicio" , repuesto_servicio_index_path %></span>
 	</li>
 	<li>
-	  <span class="nav-text"><%= link_to "Factura de Compra" , compra_index_path %></span>
+	  <span class="nav-text"><%#= link_to "Factura de Compra" , compra_index_path %></span>
 	</li>
 	</a>
 
-	</li>
+	</li> -->
+	<div class="dropdown">
+	  <button class="dropbtn">
+			<li>
+				<a>
+					<i class="fa fa-shopping-cart"></i>
+						<span class="nav-text">Compras</span>
+		</button>
+	  <div class="dropdown-content">
+	    <a>
+				<span class="nav-text"><%= link_to "Proveedor" , proveedor_index_path , class: "btn" %></span></a>
+			<a><%= link_to "Repuesto o Servicio" , repuesto_servicio_index_path, class: "btn" %></a>
+	    <a>	  <span class="nav-text"><%= link_to "Factura de Compra" , compra_index_path , class: "btn" %></span></a>
+	  </div>
+	</div>
 
+	<div class="dropdown">
+	  <button class="dropbtn">
+			<li>
+				<a>
+					<i class="fa fa-archive"></i>
+						<span class="nav-text">Ventas</span>
+		</button>
+	  <div class="dropdown-content">
+	    <a> <span class="nav-text"><%= link_to "Cliente" , cliente_index_path , class: "btn" %></span> </a>
+			<a>	  <span class="nav-text"><%= link_to "Tipo de Factura" , tipo_facturas_path , class: "btn" %></span></a>
+	    <a>	  <span class="nav-text"><%= link_to "Vehiculo" , vehiculo_index_path , class: "btn" %></span></a>
+	  </div>
+	</div>
 
+<!--
 	<li>
 	<a>
 	<i class="fa fa-user fa-lg"></i>
 	<span class="nav-text">Ventas</span>
 	<li>
-	  <span class="nav-text"><%= link_to "Cliente" , cliente_index_path %></span>
+	  <span class="nav-text"><%#= link_to "Cliente" , cliente_index_path %></span>
 	</li>
 	<li>
-	  <span class="nav-text"><%= link_to "Tipo de Factura" , tipo_facturas_path %></span>
+	  <span class="nav-text"><%#= link_to "Tipo de Factura" , tipo_facturas_path %></span>
 	</li>
 	<li>
-	  <span class="nav-text"><%= link_to "Vehiculo" , vehiculo_index_path %></span>
+	  <span class="nav-text"><%#= link_to "Vehiculo" , vehiculo_index_path %></span>
 	</li>
 	</a>
-	</li>
+	</li> -->
 
+
+		<div class="dropdown">
+		  <button class="dropbtn">
+				<li>
+					<a>
+						<i class="fa  fa-th-list"></i>
+							<span class="nav-text">Finanza</span>
+			</button>
+		  <div class="dropdown-content">
+		    <a> <span class="nav-text"><%#= link_to "Cliente" , cliente_index_path , class: "btn" %></span> </a>
+				<a>	  <span class="nav-text"><%#= link_to "Tipo de Factura" , tipo_facturas_path , class: "btn" %></span></a>
+		    <a>	  <span class="nav-text"><%#= link_to "Vehiculo" , vehiculo_index_path , class: "btn" %></span></a>
+		  </div>
+		</div>
+
+
+<!--
 	<li>
 	<a>
 	<i class="fa fa-envelope-o fa-lg"></i>
 	<span class="nav-text">Finanza</span>
 	</a>
-	</li>
+	</li> -->
 
 	</div>
 	<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>

@@ -1,0 +1,27 @@
+<!-- para mostrar errores -->
+<div class="border-form-div">
+<div class="container">
+<div class="enter">
+
+<div class="boton_redirect">&larr;
+  <%= link_to 'Volver a Lista de Mecánicos', mecanico_index_path%>
+</div>
+<br>
+
+<!-- formulario -->
+  <p>
+    <%= f.label :empleado_id%>
+    <%= f.collection_select( :empleado_id, Empleado.all, :id, :nombre, class: "form-control") %>
+  </p>
+
+  	<p >
+		<%= f.text_field :especialidad, class: "form-control",placeholder: "Especialidad", value: "Mecánico" %>
+	</p>
+
+  	<p>
+  		<%= f.submit "Guardar" , class: 'btn btn-primary mb-2 form-control' %>
+  	</p>
+</div>
+
+</div>
+</div>

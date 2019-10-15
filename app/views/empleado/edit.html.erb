@@ -1,0 +1,6 @@
+<div class="container-div">
+	<h1  align="center">Editar Empleado</h1>
+	<%= form_for @empleado, :url => { :action => :update,  :validate => true } do |f| %>
+	<%= render "form", f: f %>
+	<% end %>
+</div>

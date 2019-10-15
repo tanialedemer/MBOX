@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+
+  #routes empleado
+  get 'empleado/index'
+  get 'empleado/new'
+  post 'empleado/create'
+  get 'empleado/:id/edit', to: 'empleado#edit', as: 'empleado_edit'
+  patch 'empleado/:id/update', to: 'empleado#update', as: 'empleado_update'
+  delete 'empleado/:id/destroy', to: 'empleado#destroy', as: 'empleado_destroy'
+  get 'empleado/:id/show', to: 'empleado#show', as: 'empleado_show'
+  #routes mecánico
+  get 'mecanico/index'
+  get 'mecanico/new'
+  post 'mecanico/create'
+  get 'mecanico/:id/edit', to: 'mecanico#edit', as: 'mecanico_edit'
+  patch 'mecanico/:id/update', to: 'mecanico#update', as: 'mecanico_update'
+  delete 'mecanico/:id/destroy', to: 'mecanico#destroy', as: 'mecanico_destroy'
+  get 'mecanico/:id/show', to: 'mecanico#show', as: 'mecanico_show'
   resources :funcions
   #detalle compra routes
   get 'detalle_compra/index'
