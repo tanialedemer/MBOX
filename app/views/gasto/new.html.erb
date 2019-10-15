@@ -1,0 +1,7 @@
+
+<div class="container-div" >
+	<h1 align="center" >Nuevo Gasto</h1>
+	<%= form_for @gasto, :url => { :action => :create, :validate => true } do |f| %>
+	<%= render "form", f: f %>
+	<% end %>
+</div>

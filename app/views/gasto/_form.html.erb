@@ -1,0 +1,33 @@
+<!-- para mostrar errores -->
+<div class="border-form-div">
+<div class="container">
+<div class="enter">
+
+<div class="boton_redirect">&larr;
+  <%= link_to 'Volver a Lista de Gastos', gasto_index_path%>
+</div>
+<br>
+
+<!-- formulario -->
+
+
+  	<p >
+		<%= f.date_field :fecha_compra, class: "form-control", placeholder: "Fecha" %>
+	</p>
+  	<p >
+		<%= f.text_field :motivo, class: "form-control",placeholder: "Motivo" %>
+	</p>
+  	<p>
+		<%= f.text_area :descripcion, class: "form-control", placeholder: "Descripción" %>
+	</p>
+	<p>
+		<%= f.number_field :costo , class: "form-control", placeholder: "Costo"%>
+	</p>
+	
+  	<p>
+  		<%= f.submit "Guardar" , class: 'btn btn-primary mb-2 form-control' %>
+  	</p>
+</div>
+
+</div>
+</div>

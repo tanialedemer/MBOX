@@ -1,5 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'gasto/index'
+  get 'gasto/new'
+  post 'gasto/create'
+  get 'gasto/:id/edit', to: 'gasto#edit', as: 'gasto_edit'
+  get 'gasto/:id/show', to: 'gasto#show', as: 'gasto_show'
+  patch 'gasto/:id/update', to: 'gasto#update', as: 'gasto_update'
+  delete 'gasto/:id/destroy', to: 'gasto#destroy', as: 'gasto_destroy'
   #routes empleado
   get 'empleado/index'
   get 'empleado/new'
