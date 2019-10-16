@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_15_221156) do
+ActiveRecord::Schema.define(version: 2019_10_15_234440) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,13 @@ ActiveRecord::Schema.define(version: 2019_10_15_221156) do
     t.string "email"
     t.string "documento"
     t.integer "ruc"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "cobro_facturas", force: :cascade do |t|
+    t.float "cobro_monto"
+    t.integer "venta_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -82,6 +89,13 @@ ActiveRecord::Schema.define(version: 2019_10_15_221156) do
   create_table "mecanicos", force: :cascade do |t|
     t.string "especialidad"
     t.integer "empleado_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "pago_facturas", force: :cascade do |t|
+    t.float "monto_pago"
+    t.integer "compra_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

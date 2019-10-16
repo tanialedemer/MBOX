@@ -1,0 +1,28 @@
+<!-- para mostrar errores -->
+<div class="border-form-div">
+<div class="container">
+<div class="enter">
+
+<div class="boton_redirect">&larr;
+  <%= link_to 'Volver a Lista de Cobros', cobro_factura_index_path%>
+</div>
+<br>
+
+<!-- formulario -->
+
+
+
+  	<p >
+		<%= f.text_field :venta_id, class: "form-control",placeholder: "venta_id" %>
+	</p>
+
+  <p >
+  <%= f.number_field :cobro_monto, class: "form-control", placeholder: "cobro_monto" %>
+</p>
+  	<p>
+  		<%= f.submit "Guardar" , class: 'btn btn-primary mb-2 form-control' %>
+  	</p>
+</div>
+
+</div>
+</div>

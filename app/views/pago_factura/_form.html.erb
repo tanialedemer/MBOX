@@ -1,0 +1,28 @@
+<!-- para mostrar errores -->
+<div class="border-form-div">
+<div class="container">
+<div class="enter">
+
+<div class="boton_redirect">&larr;
+  <%= link_to 'Volver a Lista de Pagos', pago_factura_index_path%>
+</div>
+<br>
+
+<!-- formulario -->
+
+
+
+  	<p >
+		<%= f.text_field :compra_id, class: "form-control",placeholder: "compra_id" %>
+	</p>
+
+  <p >
+  <%= f.number_field :monto_pago, class: "form-control", placeholder: "monto_pago" %>
+</p>
+  	<p>
+  		<%= f.submit "Guardar" , class: 'btn btn-primary mb-2 form-control' %>
+  	</p>
+</div>
+
+</div>
+</div>

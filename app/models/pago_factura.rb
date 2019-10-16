@@ -1,0 +1,2 @@
+class PagoFactura < ApplicationRecord
+end

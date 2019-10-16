@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
 
+  #routes pago factura
+  get 'pago_factura/index'
+  get 'pago_factura/new'
+  post 'pago_factura/create'
+  get 'pago_factura/:id/edit', to: 'pago_factura#edit', as: 'pago_factura_edit'
+  get 'pago_factura/:id/show', to: 'pago_factura#show', as: 'pago_factura_show'
+  patch 'cobro_factura/:id/update', to: 'pago_factura#update', as: 'pago_factura_update'
+  delete 'cobro_factura/:id/destroy', to: 'pago_factura#destroy', as: 'pago_factura_destroy'
+  #routes cobro factura
+  get 'cobro_factura/index'
+  get 'cobro_factura/new'
+  post 'cobro_factura/create'
+  get 'cobro_factura/:id/edit', to: 'cobro_factura#edit', as: 'cobro_factura_edit'
+  get 'cobro_factura/:id/show', to: 'cobro_factura#show', as: 'cobro_factura_show'
+  patch 'cobro_factura/:id/update', to: 'cobro_factura#update', as: 'cobro_factura_update'
+  delete 'cobro_factura/:id/destroy', to: 'cobro_factura#destroy', as: 'cobro_factura_destroy'
+  #routes gasto
   get 'gasto/index'
   get 'gasto/new'
   post 'gasto/create'

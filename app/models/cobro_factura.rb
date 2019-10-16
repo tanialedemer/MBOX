@@ -1,0 +1,2 @@
+class CobroFactura < ApplicationRecord
+end
